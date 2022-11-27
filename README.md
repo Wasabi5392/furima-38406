@@ -18,7 +18,6 @@
 - has_many :items
 - has_many :comments
 - has_many :purchase_logs
-- has_many :addresses
 
 ## items テーブル
 
@@ -30,7 +29,7 @@
 | user                  | references | null: false, foreign_key: true |
 | information           | text       | null: false                    |
 | price                 | integer    | null: false                    |
-| area_id               | integer    | null: false                    |
+| prefecture_id         | integer    | null: false                    |
 | scheduled_delivery_id | integer    | null: false                    |
 | delivery_charge_id    | integer    | null: false                    |
 
@@ -39,7 +38,6 @@
 - has_many :comments
 - belongs_to :user
 - has_one :purchase_log
-- has_one :address
 
 ## purchase_logs テーブル
 
@@ -52,24 +50,23 @@
 
 - belongs_to :user
 - belongs_to :item
+- has_one :address
 
 ## addresses テーブル
 
 | Column                | Type       | Options                        |
 | --------------------- | ---------- | ------------------------------ |
-| user                  | references | null: false, foreign_key: true |
-| item                  | references | null: false, foreign_key: true |
+| purchase_log          | references | null: false, foreign_key: true |
 | post_code             | integer    | null: false                    |
-| prefecture_id         | integer    | null: false                    |
+| prefecture_id         | string    | null: false                    |
 | city                  | string     | null: false                    |
 | address               | string     | null: false                    |
 | building              | string     |                                |
-| phone_number          | integer    | null: false                    |
+| phone_number          | string    | null: false                    |
 
 ### Association
 
-- belongs_to :user
-- belongs_to :item
+- belongs_to :purchase_log
 
 ## comments テーブル
 
