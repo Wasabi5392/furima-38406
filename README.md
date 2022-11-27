@@ -58,11 +58,11 @@
 | --------------------- | ---------- | ------------------------------ |
 | purchase_log          | references | null: false, foreign_key: true |
 | post_code             | integer    | null: false                    |
-| prefecture_id         | string    | null: false                    |
+| prefecture_id         | integer    | null: false                    |
 | city                  | string     | null: false                    |
 | address               | string     | null: false                    |
 | building              | string     |                                |
-| phone_number          | string    | null: false                    |
+| phone_number          | string     | null: false                    |
 
 ### Association
 
