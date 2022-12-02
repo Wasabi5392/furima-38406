@@ -9,7 +9,7 @@ class User < ApplicationRecord
   KANA_REGEX = /\A[ァ-ヶ]+\z/.freeze
 
 
-  validates :encrypted_password, format: { with: PASSWORD_REGEX }
+  validates_format_of :password, with: PASSWORD_REGEX
   validates :nickname, presence: true
   validates :firstname_in_kanji, presence: true, format: { with: NAME_REGEX }
   validates :lastname_in_kanji, presence: true, format: { with: NAME_REGEX }
