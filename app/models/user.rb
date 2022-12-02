@@ -10,7 +10,7 @@ class User < ApplicationRecord
   KANA_REGEX = /\A[ァ-ヶ]+\z/
 
   validates :email, presence: true, uniqueness: true, format: { with: EMAIL_REGEX }
-  validates :encrypted_password, presence: true, length: { minimum: 6 }, format: { with: PASSWORD_REGEX }, message: 'には英字と数字の両方を含めて設定してください'
+  validates :encrypted_password, presence: true, length: { minimum: 6 }, format: { with: PASSWORD_REGEX }
   validates :nickname, presence: true
   validates :firstname_in_kanji, presence: true, format: { with: NAME_REGEX }
   validates :lastname_in_kanji, presence: true, format: { with: NAME_REGEX }
