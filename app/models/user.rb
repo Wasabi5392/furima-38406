@@ -6,7 +6,7 @@ class User < ApplicationRecord
 
   PASSWORD_REGEX = /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]+\z/i.freeze
   NAME_REGEX = /\A[ぁ-んァ-ヶ一-龥々ー]+\z/.freeze
-  KANA_REGEX = /\A[ァ-ヶ]+\z/.freeze
+  KANA_REGEX = /\A[ァ-ヶー]+\z/.freeze
 
   validates_format_of :password, with: PASSWORD_REGEX
   validates :nickname, presence: true
