@@ -1,0 +1,2 @@
+class PurchaseLogsController < ApplicationController
+end
